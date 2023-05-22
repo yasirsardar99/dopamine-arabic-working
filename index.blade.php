@@ -648,15 +648,15 @@
     <div class="container">
         <div class="row">
             <h1>{{$translate =App\Helpers\Menus::Translator(63,$code)}}<br>
-                Amazing Holiday Packages</h1>
-            <p>650+ Travel Agents serving 65+ Destinations worldwide</p>
+                {{$translate =App\Helpers\Menus::Translator(14,$code)}}</h1>
+            <p>{{$translate =App\Helpers\Menus::Translator(11,$code)}}</p>
         </div>
         <div class="row">
             <div class="form_main_wrap">
                 <form class="d-flex" method="GET" action="{{url('tour-package', ['selectedValue' => 'default']) }}">
                     @csrf
                     <select name="slug" id="option" class="select_dest" required>
-                        <option selected disabled value="">Type a Destination</option>
+                        <option selected disabled value="">{{$translate =App\Helpers\Menus::Translator(48,$code)}}</option>
                         @if(isset($citys))
                         @foreach($citys as $city)
                         <option value="{{$city->slug}}">{{$city->title ?? ''}}</option>
@@ -674,7 +674,7 @@
                     <div class="multi-select-dropdown ">
                         <div class="selected-options select select_duration">
                             <div class="selected-option " id="selectop-none">
-                                <p> Select duration </p>
+                                <p> {{$translate =App\Helpers\Menus::Translator(50,$code)}}</p>
                             </div>
                             <div class="selected-option-list" id="padding-0"></div>
                         </div>
@@ -682,23 +682,21 @@
                             <li>
                                 <label>
                                     <input type="checkbox" name="option1" value="1-3">
-                                    1 to 3 days
+                                    {{$translate =App\Helpers\Menus::Translator(52,$code)}}
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox" name="option2" value="4-6">4 to 6 days
+                                    <input type="checkbox" name="option2" value="4-6">{{$translate =App\Helpers\Menus::Translator(53,$code)}}</label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" name="option3" value="7-9">{{$translate =App\Helpers\Menus::Translator(54,$code)}}
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox" name="option3" value="7-9">7 to 9 days
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="option4" value="10-12">10 to 12 days
-                                </label>
+                                    <input type="checkbox" name="option4" value="10-12">{{$translate =App\Helpers\Menus::Translator(55,$code)}}</label>
                             </li>
                             <li>
                                 <label>
@@ -707,7 +705,7 @@
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox" name="option5" value="">Not decided
+                                    <input type="checkbox" name="option5" value="">{{$translate =App\Helpers\Menus::Translator(57,$code)}}
                                 </label>
                             </li>
                         </ul>
@@ -725,7 +723,7 @@
                             <option value="">Not decided</option>
                         </select> -->
                     <select name="month" class="select_month">
-                        <option selected disabled>Select month</option>
+                        <option selected disabled>{{$translate =App\Helpers\Menus::Translator(49,$code)}}</option>
                         @if(isset($months))
                         @foreach($months as $month)
                         <option value="{{$month->season_package}}">{{$month->season_package ?? ''}}
@@ -747,10 +745,9 @@
 <div class="sec sec_destinations section" id="destinations">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 explore">Explore destinations by theme</div>
+            <div class="col-sm-6 explore">{{$translate =App\Helpers\Menus::Translator(12,$code)}}</div>
 
-            <div class="col-sm-6 bets_package_note"><img src="{{ asset('travel/images/phone.png') }}"> For best
-                packages, call us at <a href="tel:18001235555">1800-123-5555</a></div>
+            <div class="col-sm-6 bets_package_note"><img src="{{ asset('travel/images/phone.png') }}"> {{$translate =App\Helpers\Menus::Translator(51,$code)}} <a href="tel:18001235555">1800-123-5555</a></div>
         </div>
         <div class="row row_destinations slider_destinations">
             @if(isset($theme))
@@ -767,13 +764,13 @@
                         Detail</a>
                 </div>
                 <h3>{{$value->title ?? ''}}</h3>
-                <p>30+ destinations</p>
+                <p>{{$translate =App\Helpers\Menus::Translator(59,$code)}}</p>
             </div>
             @endforeach
             @endif
         </div>
         <div class="row row_explore_selling" id="selling">
-            <div class="explore_for_heading">Explore best selling packages for</div>
+            <div class="explore_for_heading">{{$translate =App\Helpers\Menus::Translator(13,$code)}}</div>
             <div class="select_sell_for d-flex">
                 {{-- <a class="int_destinations"><input type="checkbox" name="sell_for" class="submit-form" value="international">--}}
                 {{-- <label>International--}}
@@ -783,12 +780,12 @@
 
                 <div class="my-checks int_destinations submit-form">
                     <input type="checkbox" name="sell_for" value="international" id="flexCheckDefault">
-                    <label for="flexCheckDefault"> International Destinations</label>
+                    <label for="flexCheckDefault"> {{$translate =App\Helpers\Menus::Translator(25,$code)}}</label>
                 </div>
 
                 <div class="my-checks dest_within_uae submit-form">
                     <input type="checkbox" name="sell_for" value="United Arab Emirates" id="uae">
-                    <label for="uae"> Destinations within UAE</label>
+                    <label for="uae"> {{$translate =App\Helpers\Menus::Translator(26,$code)}}</label>
                 </div>
 
                 {{-- <div class="form-check int_destinations submit-form">--}}
@@ -819,7 +816,7 @@
                         to 6 days</a></div>
                 <div class="days_limit selling"><a class="filter" data-value="7-9">7
                         to 9 days</a></div>
-                <div class="days_limit selling"><a class="filter" data-value="10-12">10 to 12 days</a></div>
+                <div class="days_limit selling"><a class="filter" data-value="10-12">{{$translate =App\Helpers\Menus::Translator(55,$code)}}</a></div>
                 <div class="days_limit selling"><a class="filter" data-value="13-100">13
                         or more days</a></div>
             </div>
@@ -879,8 +876,8 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="heading1">{{$translate =App\Helpers\Menus::Translator(60,$code)}}</div>
-                <div class="heading2">Customize & Book</div>
-                <div class="heading3">Amazing<br> Holiday Packages</div>
+                <div class="heading2">{{$translate =App\Helpers\Menus::Translator(63,$code)}}</div>
+                <div class="heading3">{{$translate =App\Helpers\Menus::Translator(14,$code)}}</div>
                 <div class="heading4">in <span>{{$translate =App\Helpers\Menus::Translator(61,$code)}}</span></div>
                 <div class="watch_video"><a href="#" data-toggle="modal" data-target="#myModal"> {{$translate =App\Helpers\Menus::Translator(62,$code)}}
                     </a></div>
@@ -890,20 +887,20 @@
                 <div class="row text-center select_pkg">
                     <div class="col-sm-4">
                         <div class="select_pkg_img"><img src="{{ asset('travel/images/element1.png') }}"></div>
-                        <h3>Select your package</h3>
-                        <p>& tell us your preferences</p>
+                        <h3>{{$translate =App\Helpers\Menus::Translator(32,$code)}}</h3>
+                        <p>{{$translate =App\Helpers\Menus::Translator(33,$code)}}</p>
                     </div>
 
                     <div class="col-sm-4">
                         <div class="select_pkg_img"><img src="{{ asset('travel/images/element2.png') }}"></div>
-                        <h3>Select your package</h3>
-                        <p>& tell us your preferences</p>
+                        <h3>{{$translate =App\Helpers\Menus::Translator(32,$code)}}</h3>
+                        <p>{{$translate =App\Helpers\Menus::Translator(33,$code)}}</p>
                     </div>
 
                     <div class="col-sm-4">
                         <div class="select_pkg_img"><img src="{{ asset('travel/images/element3.png') }}"></div>
-                        <h3>Select your package</h3>
-                        <p>& tell us your preferences</p>
+                        <h3>{{$translate =App\Helpers\Menus::Translator(32,$code)}}</h3>
+                        <p>{{$translate =App\Helpers\Menus::Translator(33,$code)}}</p>
                     </div>
                 </div>
             </div>
@@ -913,7 +910,7 @@
 <section class="sec happy section" id="travel_stories">
     <div class="container">
         <h1>Over 40 Lac+ Happy Travelers</h1>
-        <p>Real travelers. Real stories. Real opinions to help you make the right choice.</p>
+        <p>{{$translate =App\Helpers\Menus::Translator(27,$code)}}</p>
     </div>
 
     <div class="container">
@@ -924,7 +921,7 @@
                     <li><a data-toggle="tab" href="#tab2">{{$translate =App\Helpers\Menus::Translator(65,$code)}}</a></li>
                     <li><a data-toggle="tab" href="#tab3">{{$translate =App\Helpers\Menus::Translator(66,$code)}}</a></li>
                     <li><a data-toggle="tab" href="#tab4">{{$translate =App\Helpers\Menus::Translator(67,$code)}}</a></li>
-                    <li><a data-toggle="tab" href="#tab5">Adventurous Honeymoon In Maldives</a></li>
+                    <li><a data-toggle="tab" href="#tab5">{{$translate =App\Helpers\Menus::Translator(68,$code)}}</a></li>
                     <li><a data-toggle="tab" href="#tab6">{{$translate =App\Helpers\Menus::Translator(69,$code)}}</a></li>
                     <li><a data-toggle="tab" href="#tab7">{{$translate =App\Helpers\Menus::Translator(70,$code)}}</a></li>
                     <li><a href="{{ url('https://client.edwomtech.com/dopaminetravel_wp/') }}">{{$translate =App\Helpers\Menus::Translator(109,$code)}}</a></li>
@@ -946,22 +943,18 @@
                                 <div class="tags">
                                     <span>{{$translate =App\Helpers\Menus::Translator(75,$code)}}</span><span>{{$translate =App\Helpers\Menus::Translator(76,$code)}}</span><span>{{$translate =App\Helpers\Menus::Translator(77,$code)}}</span><span>{{$translate =App\Helpers\Menus::Translator(78,$code)}}</span>
                                 </div>
-                                <p>Nisarg & his wife had a picture-perfect honeymoon in Maldives. Here's how
-                                    they
-                                    indulged in adventurous experiences, explored the island at their own pace,
-                                    and
-                                    had the dream vacation of their lives.</p>
+                                <p>{{$translate =App\Helpers\Menus::Translator(72,$code)}}</p>
                                 <div class="row tab_row1">
                                     <div class="col-sm-1 nopad"><img src="{{ asset('travel/images/image006.png') }}">
                                     </div>
                                     <div class="col-sm-7">
-                                        <h5>Nisarg Patel</h5>
+                                        <h5>{{$translate =App\Helpers\Menus::Translator(79,$code)}}</h5>
                                         <p>Mumbai, 2 day ago</p>
                                     </div>
                                     <div class="col-sm-4 pull-right right_text">Trip to Maldives</div>
                                 </div>
                                 <div class="row tab_row2">
-                                    <div class="col-sm-4"><a href="#">Read Full Story</a></div>
+                                    <div class="col-sm-4"><a href="#">{{$translate =App\Helpers\Menus::Translator(82,$code)}}</a></div>
                                     <div class="col-sm-8 nopad"><a href="#" class="btn1">{{$translate =App\Helpers\Menus::Translator(83,$code)}}</a></div>
                                 </div>
                             </div>
@@ -978,7 +971,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-6 tab_data">
-                                <h3>Nisarg's Adventurous Honeymoon In Maldives</h3>
+                                <h3>{{$translate =App\Helpers\Menus::Translator(16,$code)}}</h3>
                                 <div class="tags">
                                     <span>{{$translate =App\Helpers\Menus::Translator(75,$code)}}</span><span>{{$translate =App\Helpers\Menus::Translator(76,$code)}}</span><span>{{$translate =App\Helpers\Menus::Translator(77,$code)}}</span><span>{{$translate =App\Helpers\Menus::Translator(78,$code)}}</span>
                                 </div>
@@ -992,7 +985,7 @@
                                     </div>
                                     <div class="col-sm-7">
                                         <h5>Nisarg Patel</h5>
-                                        <p>Mumbai, 2 day ago</p>
+                                        <p>{{$translate =App\Helpers\Menus::Translator(80,$code)}}</p>
                                     </div>
                                     <div class="col-sm-4 pull-right right_text">Trip to Maldives</div>
                                 </div>
@@ -1199,8 +1192,8 @@
 <section class="sec section perfect_holiday">
     <div class="container">
         <div class="row">
-            <h3 class="common text-center">Let us help you plan your perfect holiday</h3>
-            <p class="common text-center">Select Your Trip Planning Stage</p>
+            <h3 class="common text-center">{{$translate =App\Helpers\Menus::Translator(17,$code)}}</h3>
+            <p class="common text-center">{{$translate =App\Helpers\Menus::Translator(28,$code)}}</p>
         </div>
         <div class="row external_btns text-center">
             <div class="col-sm-4">
@@ -1215,7 +1208,7 @@
         </div>
         <div class="row row_last_holidya_perfect">
             <div class="col-sm-6">
-                <h4>Fastest Growing Holiday Marketplace</h4>
+                <h4>{{$translate =App\Helpers\Menus::Translator(24,$code)}}</h4>
                 <div class="row">
                     <div class="col-sm-4">
                         <img src="{{ asset('travel/images/icon1.png') }}">
@@ -1235,7 +1228,7 @@
             </div>
 
             <div class="col-sm-6">
-                <h4>Fastest Growing Holiday Marketplace</h4>
+                <h4>{{$translate =App\Helpers\Menus::Translator(2,$code)}}</h4>
                 <div class="row">
                     <div class="col-sm-4">
                         <img src="{{ asset('travel/images/icon4.png') }}">
@@ -1258,11 +1251,11 @@
 
     <div class="container simple_filters" id="packages">
         <div class="row">
-            <h3 class="common text-center">Choose Your Destination by 4 Simple Filters</h3>
-            <p class="common text-center">Filter by Budget, Duration, Season & Holiday themes</p>
+            <h3 class="common text-center">{{$translate =App\Helpers\Menus::Translator(20,$code)}}</h3>
+            <p class="common text-center">{{$translate =App\Helpers\Menus::Translator(29,$code)}}</p>
         </div>
         <div class="all_destinations">
-            <h4>Best priced packages within your BUDGET</h4>
+            <h4>{{$translate =App\Helpers\Menus::Translator(30,$code)}}</h4>
             <div class="price_main_wrap  nav nav-tabs">
                 <div class="days_limit price"><a class="filter" data-value="0-10000">Less than Aed 10,000</a></div>
                 <div class="days_limit price"><a class="filter" data-value="10000-20000">Aed 10,000 to Aed
@@ -1301,22 +1294,20 @@
         </div>
         <div class="slider_red_2">
             <div class="all_destinations">
-                <h4>Best priced packages for your holiday DURATION</h4>
+                <h4>{{$translate =App\Helpers\Menus::Translator(18,$code)}}</h4>
                 <div class="best_main_wrap nav nav-tabs">
                     <!-- <input type="checkbox" class="days_limit ">
                         <a class="filter" data-value="1-3">1 to 3 Days </a>
                         </input> -->
-                    <div type="radio" class="days_limit best"><a class="filter" data-value="1-3">1 to 3 Days</a>
+                    <div type="radio" class="days_limit best"><a class="filter" data-value="1-3">{{$translate =App\Helpers\Menus::Translator(52,$code)}}</a>
                     </div>
-                    <div type="radio" class="days_limit best"><a class="filter" data-value="4-6">4 to 6 Days</a>
+                    <div type="radio" class="days_limit best"><a class="filter" data-value="4-6">{{$translate =App\Helpers\Menus::Translator(53,$code)}}</a>
                     </div>
-                    <div type="radio" class="days_limit best"><a class="filter" data-value="7-9">7 to 9 Days</a>
+                    <div type="radio" class="days_limit best"><a class="filter" data-value="7-9">{{$translate =App\Helpers\Menus::Translator(54,$code)}}</a>
                     </div>
-                    <div type="radio" class="days_limit best"><a class="filter" data-value="10-12">10 to 12
-                            Days</a>
+                    <div type="radio" class="days_limit best"><a class="filter" data-value="10-12">{{$translate =App\Helpers\Menus::Translator(55,$code)}}</a>
                     </div>
-                    <div type="radio" class="days_limit best"><a class="filter" data-value="13-100">13 or More
-                            Days</a>
+                    <div type="radio" class="days_limit best"><a class="filter" data-value="13-100">{{$translate =App\Helpers\Menus::Translator(56,$code)}}</a>
                     </div>
                 </div>
                 <div>
@@ -1335,7 +1326,7 @@
         </div>
 
         <!-- sec -->
-        <h4 class="select_travel_month_heading">Staff picks for each SEASON</h4>
+        <h4 class="select_travel_month_heading">{{$translate =App\Helpers\Menus::Translator(31,$code)}}</h4>
         <h5 class=""><span>{{$translate =App\Helpers\Menus::Translator(93,$code)}}</span></h5>
         <div class="all_destinations">
             {{-- <div class="select_travel_month_below"><span>Select your month of Travel</span>
@@ -1375,7 +1366,7 @@
         </div>
         <div class="themes_sec">
             <h6>Still undecided?</h6>
-            <h4 class="select_travel_month_heading">Browse packages through holiday THEMES</h4>
+            <h4 class="select_travel_month_heading">{{$translate =App\Helpers\Menus::Translator(15,$code)}}</h4>
 
             <div class="row text-center row_themes">
                 @if(isset($activities))
@@ -1407,8 +1398,8 @@
         <div class="row">
             <div class="col-sm-6 text-center">
                 <img src="{{ asset('travel/images/feeling_lost.png') }}">
-                <h1>Our experts would love to <br> create a package just for you!</h1>
-                <p>Fill in your requirements here > </p>
+                <h1>{{$translate =App\Helpers\Menus::Translator(34,$code)}}</h1>
+                <p>{{$translate =App\Helpers\Menus::Translator(35,$code)}}</p>
             </div>
 
             <div class="col-sm-6">
@@ -1433,9 +1424,8 @@
 </section>
 <section class="sec section safe_holidays">
     <div class="container">
-        <h4 class="common">Our Commitment to Safe Holidays</h4>
-        <p class="common2">We are actively maintaining the safety measures for providing you a risk free vacation.
-        </p>
+        <h4 class="common">{{$translate =App\Helpers\Menus::Translator(36,$code)}}</h4>
+        <p class="common2">{{$translate =App\Helpers\Menus::Translator(37,$code)}}</p>
         <div class="row">
             @if(isset($holidays))
             @foreach ($holidays as $holiday)
@@ -1464,8 +1454,8 @@
 
         <div class="row incredibly_text">
             <div class="col-sm-8">
-                <h3>Get The Best Out Of Your Next Getaway</h3>
-                <p>to inspire your next getaway</p>
+                <h3>{{$translate =App\Helpers\Menus::Translator(38,$code)}}</h3>
+                <p>{{$translate =App\Helpers\Menus::Translator(39,$code)}}</p>
             </div>
             <div class="col-sm-4 text-right">
                 <a href="#"><a href="#">{{$translate =App\Helpers\Menus::Translator(109,$code)}}</a></a>
@@ -1478,7 +1468,7 @@
                     <img src="{{ asset('travel/images/incredibly.png') }}">
                     <h4>{{$translate =App\Helpers\Menus::Translator(110,$code)}}</h4>
                     <p class="pull-right">
-                        <a href="#">Read More</a>
+                        <a href="#">{{$translate =App\Helpers\Menus::Translator(111,$code)}}</a>
                     </p>
                 </div>
             </div>
@@ -1488,7 +1478,7 @@
                     <img src="{{ asset('travel/images/incredibly.png') }}">
                     <h4>{{$translate =App\Helpers\Menus::Translator(110,$code)}}</h4>
                     <p class="pull-right">
-                        <a href="#">Read More</a>
+                        <a href="#">{{$translate =App\Helpers\Menus::Translator(111,$code)}}</a>
                     </p>
                 </div>
             </div>
@@ -1499,7 +1489,7 @@
                     <img src="{{ asset('travel/images/incredibly.png') }}">
                     <h4>{{$translate =App\Helpers\Menus::Translator(110,$code)}} </h4>
                     <p class="pull-right">
-                        <a href="#">Read More</a>
+                        <a href="#">{{$translate =App\Helpers\Menus::Translator(111,$code)}}</a>
                     </p>
                 </div>
             </div>
@@ -1510,7 +1500,7 @@
                     <img src="{{ asset('travel/images/incredibly.png') }}">
                     <h4>50 Incredibly Romantic Honeymoon Destinations </h4>
                     <p class="pull-right">
-                        <a href="#">Read More</a>
+                        <a href="#">{{$translate =App\Helpers\Menus::Translator(111,$code)}}</a>
                     </p>
                 </div>
             </div>
@@ -1521,8 +1511,8 @@
     <div class="row">
         <div class="col-sm-8">
 
-            <h3>Did not find what you are <br>looking for? No worries!</h3>
-            <p>Fill the form and get a callback from our holiday experts</p>
+            <h3>{{$translate =App\Helpers\Menus::Translator(40,$code)}}</h3>
+            <p>{{$translate =App\Helpers\Menus::Translator(41,$code)}}</p>
         </div>
         <div class="col-sm-4">
             <a href="#">{{$translate =App\Helpers\Menus::Translator(112,$code)}}</a>
@@ -1534,7 +1524,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 text-left">
-                <h3>Who We Are?</h3>
+                <h3>{{$translate =App\Helpers\Menus::Translator(42,$code)}}</h3>
                 <p>{{$translate =App\Helpers\Menus::Translator(113,$code)}}<span id="dots">...</span></p>
                 <div id="more">
                     <p>{{$translate =App\Helpers\Menus::Translator(114,$code)}}</p>
@@ -1823,9 +1813,9 @@
                 // selectedOptionList.style.padding = "0px";
 
                 const selectedOption = document.createElement('div');
-                selectedOption.classList.add('selected-option');
+                selectedOption.classList.add('selected-option1');
                 selectedOption.dataset.value = checkbox.value;
-                selectedOption.textContent = option.textContent;
+                selectedOption.textContent = checkbox.value;
                 selectedOptionList.appendChild(selectedOption);
             } else {
                 const selectedOption = selectedOptionList.querySelector(`div[data-value="${checkbox.value}"]`);
